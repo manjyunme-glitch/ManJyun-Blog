@@ -14,6 +14,8 @@
 
 3. Use `docker-compose.yml` from the repository root.
 
+Do not configure this stack as a registry image pull. The compose file builds the image from the Git repository, so Portainer should use its Git stack build flow.
+
 4. Deploy the stack and open:
 
    ```text

@@ -21,10 +21,9 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/* \
   && mkdir -p /app/data/uploads \
   && chown -R node:node /app
-USER node
 COPY --from=builder --chown=node:node /app/public ./public
 COPY --from=builder --chown=node:node /app/.next/standalone ./
 COPY --from=builder --chown=node:node /app/.next/static ./.next/static
 EXPOSE 3000
 VOLUME ["/app/data"]
-CMD ["node", "server.js"]
+CMD ["sh", "-c", "mkdir -p /app/data/uploads && node server.js"]

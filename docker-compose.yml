@@ -7,6 +7,7 @@ services:
     container_name: manjyun-blog
     restart: unless-stopped
     network_mode: bridge
+    user: "0:0"
     ports:
       - "4482:3000"
     environment:

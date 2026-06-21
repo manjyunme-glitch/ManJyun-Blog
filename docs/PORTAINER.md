@@ -22,6 +22,8 @@
 
 The compose file explicitly uses Docker's default `bridge` network through `network_mode: bridge`.
 
+The container runs as root (`user: "0:0"`) so it can write to the QNAP bind mount at `/share/DockerData/ManJyun-Blog`. The application data is still isolated to `/app/data` inside the container.
+
 5. Visit `/admin` to create the first administrator and scan the TOTP QR code.
 
 ## Updating

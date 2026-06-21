@@ -20,9 +20,10 @@
    http://<NAS-IP>:4482
    ```
 
+The compose file explicitly uses Docker's default `bridge` network through `network_mode: bridge`.
+
 5. Visit `/admin` to create the first administrator and scan the TOTP QR code.
 
 ## Updating
 
 The admin update page only checks GitHub. To update the running stack, use Portainer's pull/redeploy workflow for the Git stack.
-

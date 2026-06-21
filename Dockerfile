@@ -7,7 +7,7 @@ RUN npm ci
 FROM deps AS builder
 WORKDIR /app
 COPY . .
-RUN npm run build
+RUN mkdir -p public && npm run build
 
 FROM node:22-bookworm-slim AS runner
 WORKDIR /app
